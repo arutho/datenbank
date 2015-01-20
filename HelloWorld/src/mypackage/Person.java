@@ -7,4 +7,7 @@ public class Person {
 	int alter;
 	int jahrgang;
 	
+	Person(){
+		
+	}
 }
