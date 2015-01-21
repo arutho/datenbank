@@ -5,27 +5,28 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
 public class Connector {
-	
+
+	private static String url = "jdbc:mysql://sql3.freemysqlhosting.net";
+	private static String acc = "sql364370";
+	private static String pw = "vD5!dE1%";
 	private static Connection connect = null;
-	private  Statement statement = null;
+	private Statement statement = null;
 	private ResultSet resultset = null;
-	
+
 	public static void main(String[] args) {
 		try {
+			System.out.println("trolololo.");
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://sql3.freemysqlhosting.net" + "user=sql364370&password=vD5!dE1%");
+			connect = DriverManager.getConnection(url,acc,pw);
+
 			System.out.println("Connected.");
-		
-		
+			connect.close();
+
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Fail.");
 		}
-		
-		
-		
-		
+
 	}
 
 }
