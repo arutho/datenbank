@@ -7,27 +7,27 @@ import java.sql.Statement;
 
 public class Connector {
 
-
 	private static Connection connect = null;
-	private Statement statement = null;
-	private ResultSet resultset = null;
 
-	public static void main(String[] args) {
+	public static Connection connect() {
 		try {
-			String url = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql364370";
-			String acc = "sql364370";
-			String pw = "vD5!dE1%";
+			System.out.println("lol");
+			String url = "jdbc:oracle:thin:@localhost:1548:oracle";
+			String acc = "joshi";
+			String pw = "student";
 			
 			System.out.println("trolololo.");
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("oracle.jdbc.OracleDriver");
 			connect = DriverManager.getConnection(url,acc,pw);
 
 			System.out.println("Connected.");
 			connect.close();
 
 		} catch (Exception e) {
-			System.out.println("Fail.");
+			e.printStackTrace();
 		}
+		
+		return connect;
 
 	}
 
